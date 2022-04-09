@@ -1,0 +1,14 @@
+GET http://localhost:3000/api/dogs
+
+###
+
+POST http://localhost:3000/api/dogs
+Content-Type: application/json
+
+{
+  "name": "Hebbe",
+  "age": 13,
+  "breed": "Cocker-Spaniel",
+  "color": "orange",
+  "id": 1
+}
