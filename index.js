@@ -18,15 +18,7 @@ app.use("/", (req, res, next) => {
 
 app.use("/", express.static("public"))
 
-const dogs = [
-    {
-        name: "Zaqi",
-        age: 3,
-        breed: "amstaff",
-        color: "striped",
-        id: 2
-    }
-]
+
 
 app.get('/', (req, res) => {
     res.json(dogs)
