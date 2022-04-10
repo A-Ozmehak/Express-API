@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = 3000;
+const port = 2000;
 const hostname = '127.0.0.1';
 
 app.use(express.json());
@@ -12,27 +12,35 @@ app.use("/", (req, res, next) => {
 
 app.use("/", express.static("public"))
 
-app.get('/', (re, res) => {
+const dogs = [
+    {
+        name: "Zaqi",
+        age: 3,
+        breed: "amstaff",
+        color: "striped",
+        id: 2
+    }
+]
+
+app.get('/api/dogs', (req, res) => {
+    res.json(dogs)
+})
+
+app.post('/api/dogs', (req, res) => {
+    console.log(req.body)
+    dogs.push(req.body)
+    res.status(201).send("new dog")
+})
+
+app.put('/api/dogs', (req, res) => {
 
 })
 
-app.post('/', (req, res) => {
+app.delete('/api/dogs', (req, res) => {
 
 })
 
-app.put('/', (req, res) => {
-
-})
-
-app.delete('/', (req, res) => {
-
-})
-
-
-
-
-
-
-app.listen('/', (req, res) => {
+app.listen(port, () => {
     console.log(`Server is running on ${port}`)
 })
+

@@ -1,8 +1,8 @@
-GET http://localhost:3000/api/dogs
+GET http://localhost:2000/api/dogs
 
 ###
 
-POST http://localhost:3000/api/dogs
+POST http://localhost:2000/api/dogs
 Content-Type: application/json
 
 {
