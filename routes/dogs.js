@@ -10,12 +10,6 @@ let dogs = [
         breed: "Cocker-Spaniel",
         color: "orange",
 
-    }, {
-        name: "Zaqi",
-        age: 3,
-        breed: "Amstaff",
-        color: "striped",
-
     }
 ]
 
@@ -30,46 +24,52 @@ router.post('/', (req, res) => {
 
     dogs.push(dogWithId);
 
-    res.send(`New dog: ${dog.name}`);
-
+    res.status(201).send(`New dog: ${dog.name}`);
 })
 
 router.get('/:id', (req, res) => {
     const {id} = req.params;
     const foundDog = dogs.find((dog) => dog.id === id);
+
+    if (foundDog === undefined) {
+        res.status(404).send('Not found!')
+    }
     res.send(foundDog);
 })
 
 router.delete('/:id', (req, res) => {
     const {id} = req.params;
-    dogs = dogs.filter((dogs) => dogs.id !== id)
+    dogs = dogs.filter((dogs) => dogs.id !== id);
 
-    res.send(`Dog with ${id} is deleted`)
+    res.send(`Dog with ${id} is deleted`);
 })
 
 router.patch('/:id', (req, res) => {
-    const { id } = req.params;
-    const { name, age, breed, color } = req.body;
+    const {id} = req.params;
+    const {name, age, breed, color} = req.body;
     const dog = dogs.find((dog) => dog.id === id);
+
+    if (dog === undefined) {
+        res.status(404).send('Could not find what your looking for!')
+    }
 
     if (name) {
         dog.name = name;
     }
 
-    if (age) {
+    else if (age) {
         dog.age = age;
     }
 
-    if (breed) {
+    else if (breed) {
         dog.breed = breed;
     }
 
-    if (color) {
+    else if (color) {
         dog.color = color;
     }
 
-    res.send(`Dogs with id ${id} has been changed`)
-
+        res.send(`Dogs with id ${id} has been changed`)
 
 })
 
