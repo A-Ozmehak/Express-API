@@ -55,21 +55,15 @@ router.patch('/:id', (req, res) => {
 
     if (name) {
         dog.name = name;
-    }
-
-    else if (age) {
+    } else if (age) {
         dog.age = age;
-    }
-
-    else if (breed) {
+    } else if (breed) {
         dog.breed = breed;
-    }
-
-    else if (color) {
+    } else if (color) {
         dog.color = color;
     }
 
-        res.send(`Dogs with id ${id} has been changed`)
+    res.send(`Dogs with id ${id} has been changed`)
 
 })
 
