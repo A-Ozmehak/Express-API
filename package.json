@@ -1,0 +1,24 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "Jag har gjort ett REST-API i NodeJS med express. <br> Funktionaliteten är gjord med CRUD med endpointsen: <li>GET för att hämta  <li>DELETE för att ta bort  <li>POST för att lägga till  <li>PATCH för att ändra. Jag har valt att använda PATCH istället för PUT för att kunna ändra bara ett av värde i arrayen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-Ozmehak/Express-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A-Ozmehak/Express-API/issues"
+  },
+  "homepage": "https://github.com/A-Ozmehak/Express-API#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
+  }
+}
