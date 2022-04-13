@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use('/dogs', dogRoutes);
 
-app.use("/", (req, res, next) => {
+app.use('/', (req, res, next) => {
     console.log('api visited')
     next()
 })
