@@ -9,11 +9,9 @@ Funktionaliteten är gjord med CRUD med endpointsen:
 Jag har valt att använda PATCH istället för PUT för att kunna ändra bara ett av värde i arrayen.
 
 ### För att kunna köra programmet:
-[nodeJS] Installerat på datorn  
-
-[Express] Installera express med **'npm i express'**
-Kör programmet med kommando **'node index.js'** eller med nodemon.  
-[nodemon] Installera nodemon **'npm i nodemon'** för att få live uppdateringar.  
+[nodeJS] Installerat på datorn
+Installera alla paket **'npm i'**
+Kör programmet med kommando **'node index.js'** eller med nodemon **'nodemon index.js'.
 Sedan kör **'nodemon index.js'** för att se programmet i webbläsaren och terminalen.
 
 
