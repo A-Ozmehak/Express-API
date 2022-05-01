@@ -1,0 +1,30 @@
+GET http://localhost:2000/dogs
+
+###
+POST http://localhost:2000/dogs
+Content-Type: application/json
+
+{
+    "name": "Zaqi",
+    "age": 3,
+    "breed": "Boxer-Amstaff",
+    "color": "striped"
+}
+
+###
+
+GET http://localhost:2000/dogs/4176bb2f-234b-4990-9b3a-36ee2d1a9104
+
+###
+
+DELETE http://localhost:2000/dogs/4176bb2f-234b-4990-9b3a-36ee2d1a9104
+
+
+###
+
+PATCH http://localhost:2000/dogs/4176bb2f-234b-4990-9b3a-36ee2d1a9104
+Content-Type: application/json
+
+ {
+     "name": "Rocky"
+ }

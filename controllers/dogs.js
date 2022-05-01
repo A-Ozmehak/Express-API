@@ -41,9 +41,17 @@ exports.getDog = (req, res) => {
 //Deletes a dog with a specific ID
 exports.deleteDog = (req, res) => {
     const { id } = req.params;
-    dogs = dogs.filter((dogs) => dogs.id !== id);
 
-    res.send(`Dog with ${id} is deleted`);
+    const filterDogs = dogs.find((dogs) => dogs.id === id);
+
+    if (!filterDogs) {
+        res.status(404).send('Could not find that dog!');
+    } else {
+        dogs = dogs.filter(function (dogs) {
+            return dogs.id !== id
+        })
+        res.send(`Dog with ${id} is deleted`);
+    }
 }
 
 //Updates a specific info about the dog
